@@ -37,7 +37,19 @@ def rectangle(start, end):
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y) 
+    down()
+    begin_fill()
+
+    x0, y0 = start.x, start.y
+    x1, y1 = end.x, end.y
+
+    goto(x1, y0)                 
+    goto((x0 + x1) / 2, y1)      
+    goto(x0, y0)                 
+
+    end_fill()
 
 
 def tap(x, y):
