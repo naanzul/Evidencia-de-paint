@@ -36,22 +36,19 @@ def circle(start, end):
 
     end_fill()
 
-
 def rectangle(start, end):
-    """Draw rectangle from start to end."""
+    "Draw rectangle from start to end."
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-
+    
     width = end.x - start.x
     height = end.y - start.y
 
-    for _ in range(2):
-        forward(width)
-        left(90)
-        forward(height)
-        left(90)
+    # Dibujar el rectángulo
+    for dx, dy in [(width, 0), (0, height), (-width, 0), (0, -height)]:
+        goto(xcor() + dx, ycor() + dy)
 
     end_fill()
 
